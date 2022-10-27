@@ -2,4 +2,11 @@
 
 <p>Parametro recibido del padre es: {{img}}</p>
 <!--ESTO SE PONE ASI YA QUE EL PARAMETRO SERA RECIBIDO DESDE EL PADRE Y UTILIZADO EN UN ENLACE MAS INFO EN LAS NOTAS-->
-<img [src]="img" alt="">
+<img [src]="img" alt="" *ngIf="img; else imgdefault" >
+
+<!--Cone l if dice que si img es vacio que arroge el else el cual es el ng-template el cual se le agrega con un asterisco mas el nombre del else que se determino en el ngIf
+pero si img tiene algo entonces mostrara la imagen y el else no lo muestra-->
+<ng-template #imgdefault>
+    <img  src="https://img.freepik.com/vector-premium/archivo-no-encontrado-ilustracion-personas-confundidas-sosteniendo-gran-lupa-buscar-resultados_258153-336.jpg" alt="">
+
+</ng-template>

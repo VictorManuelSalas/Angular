@@ -1,7 +1,7 @@
 <app-img nameSchol="hola"></app-img>
 
 
-<p><input type='text' [(ngModel)]='imgParent' /></p> <!--Para que funcione el input es necesario esta propiedad la cual
+<p><input type='text' [(ngModel)]='imgParent'/></p> <!--Para que funcione el input es necesario esta propiedad la cual
 ocupa importar lo, este hace que al teclar en el input este manda ese valor asia la variable imgParent declarada en el
 ts del padre. -->
 <app-img [img]='imgParent'></app-img> <!--Aqui se pone el variable definido en el componente entre [] ya que este recibira
