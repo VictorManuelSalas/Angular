@@ -1,0 +1,23 @@
+<h1>Propiedades</h1>
+<!--Aqui se usa un estado el cual es disabled el cual recibe una variable del ts que es
+boleana llamada btnDisabled por eso el estado esta entre corchetes, sino seria solo disabled="false"-->
+<button [disabled]="btnDisabled">Enviar</button>
+<!--Si recibimos un valor de ts es poniendo de dos formas 1 es poner el atributo entre corchetes y poner el nombre de la variable
+, la 2 es poner solo la variable entre doble llaves.-->
+<input type="text" [value]="name"/>
+
+<progress max="100" [value]="age"></progress>
+<img [src]="img" alt="Foto" width="100px">
+
+<hr>
+
+<h1>String Incorporation</h1>
+
+<h1>{{ 'Hola mundo'.repeat(3) }}</h1>
+<!--//Aqui el texto se declara como una variable sin nombre string y a este se le puede generar alguna cosa en este caso se le asigna una funcion repat el cual repetira esta variable 3 veces.
+-->
+<p>3 + 3 = {{ 3 + 3}}</p>
+<!--//Aqui se genera la operacion que esta entre llaves mostrando en la pagina 3 + 3 = 6-->
+
+<p>Hola mi nombre es {{name}} y tengo {{age}}</p> 
+    <img src="{{img}}" alt="Foto">
