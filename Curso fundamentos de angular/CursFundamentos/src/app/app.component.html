@@ -1,10 +1,60 @@
+<h1>Uso de Event Binding con botones</h1>
+<p> Esto sera que un boton esta desabilitado el cual al dar clic en el otro boton este ara que
+  el boton ya no este desabilitado
+</p>
+
+
+<button [disabled]="btnDisabled">Enviar</button>
+<button (click)="btnAbilitar()">Activar o desactivar</button>
+<p>Edad: {{ person.age}} </p>
+<button (click)="incrementadoredad()">Incrementa edad</button>
+
+<!--El SCROLL es el evento el cual recopila info cuando se hace scroll-->
+<div class="box" (scroll)="onScroll($event)">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ipsum libero porro fuga quasi accusantium a
+    aspernatur, dolorem id accusamus odit fugiat hic corrupti? Nihil nulla vero eligendi veritatis numquam!
+Lorem ipsum dolor sit amet consectetur adipisicing elit. At atque veritatis ea consequuntur odit cum inventore corporis aliquid similique, consectetur aspernatur et eveniet. Animi atque, eos vel quidem perferendis sequi.
+Non laboriosam mnis ipsam quasi autem possimus, nihil, cupiditate numquam in. Autem obcaecati repellat quisquam dolores veniam magnam earum maiores.
+Optio magnam facere sint exercitationem nemo consectetur rem aliquid suscipit ex officiis, voluptatem, fugit omnis ut. Perferendis officia sunt sit repellat fugiat ad. Qui fugiat quam earum possimus delectus voluptas.
+Officia reprehenderit voluptatibus culpa tempore cumque quidem facilis natus non hic, exercitationem perspiciatis pariatur nihil, sint earum voluptates. Et mollitia optio repudiandae maxime molestias praesentium vero exercitationem consectetur, doloribus distinctio.
+Ea consequuntur iusto dolore magni ex ipsa? Minima, placeat? Natus quo consectetur error placeat repellendus magnam aliquam in, alias, ullam molestiae blanditiis distinctio accusamus praesentium? A iste hic eligendi officiis!
+Voluptatem, quis beatae doloremque, voluptates vel deleniti animi ipsa delectus aliquid, nam minima magni sequi temporibus? Quia repellendus, ea labore at quidem minus veritatis nisi dolore, ducimus incidunt delectus nostrum.
+Debitendis aperiam alias, cum ad, consequatur veritatis architecto cumque quae libero corrupti autem sunt perspiciatis, nobis vitae obcaecati iure inventore. Reiciendis nam dolorum maxime praesentium repellendus velit, quos sequi?
+Eaque architecto tempora magni dolores vel alias aliquam dignissimos libero. Architecto reiciendis eius facilis praesentium expedita porro, natus ad placeat quibusdam corporis iste deserunt quam, minus tempore animi ex at.
+Inventore tenetur suscipit quos, ut fugit quod vel tempore ullam! Quidem laboriosam sint, at repellat quae architecto eum excepturi iusto blanditiis veniam. Consectetur libero porro laudantium perspiciatis, sapiente necessitatibus atque.
+  </p>
+</div>
+
+<!--El keyup es el evento el cual recopila los datos al ser tecleados-->
+<input type="text" [value]="person.name" (keyup)="changeName($event)" />
+<p>Nombre: {{ person.name}} </p>
+
+<hr>
+
+<h1>Mostrar elementos de un objeto</h1>
+<code>
+  //Objeto para usar con Property Binding <br>
+  person = <br> 
+    name: 'Federico',<br>
+    age: 18, <br>
+    img:
+  'https://scontent.ftrc2-1.fna.fbcdn.net/v/t39.30808-6/313348912_6111870145540112_8446841635028844716_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=BjgFbdNTXu0AX8L735H&_nc_ht=scontent.ftrc2-1.fna&oh=00_AfCrNOoeYtYYdfEXnjGXdAq_2Ob3GBdaa8puQM3ruudgyg&oe=6360C39C'
+  <br>
+</code>
+<input type="text" [value]="person.name" />
+
+<progress max="100" [value]="person.age"></progress>
+<img [src]="person.img" alt="Foto" width="100px">
+
+<hr>
+
 <h1>Propiedades</h1>
 <!--Aqui se usa un estado el cual es disabled el cual recibe una variable del ts que es
 boleana llamada btnDisabled por eso el estado esta entre corchetes, sino seria solo disabled="false"-->
 <button [disabled]="btnDisabled">Enviar</button>
 <!--Si recibimos un valor de ts es poniendo de dos formas 1 es poner el atributo entre corchetes y poner el nombre de la variable
 , la 2 es poner solo la variable entre doble llaves.-->
-<input type="text" [value]="name"/>
+<input type="text" [value]="name" />
 
 <progress max="100" [value]="age"></progress>
 <img [src]="img" alt="Foto" width="100px">
@@ -19,5 +69,5 @@ boleana llamada btnDisabled por eso el estado esta entre corchetes, sino seria s
 <p>3 + 3 = {{ 3 + 3}}</p>
 <!--//Aqui se genera la operacion que esta entre llaves mostrando en la pagina 3 + 3 = 6-->
 
-<p>Hola mi nombre es {{name}} y tengo {{age}}</p> 
-    <img src="{{img}}" alt="Foto">
+<p>Hola mi nombre es {{name}} y tengo {{age}}</p>
+<img src="{{img}}" alt="Foto">
