@@ -22,7 +22,7 @@ export class AppComponent {
   }
 
 
-  btnAbilitar(){
+  btnAbilitar() {
     //Aqui ponemos que esa variable sea falsa
     //this.btnDisabled = false;
 
@@ -30,18 +30,37 @@ export class AppComponent {
     this.btnDisabled = !this.btnDisabled;
   }
 
-  incrementadoredad(){
+  incrementadoredad() {
     //incrementa 1 en 1
     this.person.age += 1
   }
 
-  onScroll(event: Event){
+  onScroll(event: Event) {
     const element = event.target as HTMLElement;
     console.log(element.scrollTop)
   }
 
-  changeName(event: Event){
+  changeName(event: Event) {
     const element = event.target as HTMLInputElement;
     this.person.name = element.value;
   }
+
+  names: (string | number)[] = ['David', 'Hector', 'Pedro']
+  newNames = '';
+  addName() {
+    this.names.push(this.newNames);
+    this.newNames = '';
+  }
+  deleteName(index: number){
+    this.names.splice(index, 1);
+  }
+
+  //Emojis ngFor
+  emojis: string[] = ['😂' , '🐦', '🐳','🌮', '💚'];
+
+  addEmoji(event: Event) {
+    const element: HTMLElement = event.target as HTMLElement;
+    this.emojis.push(element.textContent!);
+  }
+
 }
