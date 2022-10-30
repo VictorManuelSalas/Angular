@@ -1,3 +1,20 @@
+<h1>NgModel</h1>
+<p>Nombre {{person.name}}</p>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name"/>
+<p>Valid: {{nameInput.valid}}</p>
+<input type="number" max="18" min="10" required #ageInput="ngModel" [(ngModel)]="person.age"/>
+<p>Edad {{person.age}}</p>
+
+<!--Este es un plus de ngModel, nos permite validar un elemento
+que estra usando ngModule. Por ejemplo si la edad se edita y se pone un 
+numero que esta entre el rango del min y max este sera valido por lo cual 
+la sig etiuqeta mostrara que Valid: true ´pero si se agrega un numero superior a 
+18 o menor de 10 este sera Valid: false.-->
+<p>Valid: {{ageInput.valid}}</p>
+<hr>
+
+<br>
+
 <h1>Uso de Event Binding con botones</h1>
 <p> Esto sera que un boton esta desabilitado el cual al dar clic en el otro boton este ara que
   el boton ya no este desabilitado
