@@ -1,6 +1,7 @@
 <h1>*ngFor con objetos</h1>
 <div>
   <div *ngFor="let product of products">
+    <!--El src esta entre [] ya que es ul valor recibido del objeto-->
     <img width="250" [src]="product.image" alt="Image">
     <p>{{product.price}}</p>
     <p>{{product.name}}</p>
