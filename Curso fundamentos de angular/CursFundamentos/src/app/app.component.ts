@@ -10,6 +10,15 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  box = {
+    width : 100,
+    height : 100,
+    background : 'red'
+  }
+
+  widthImg = 10;
+
   title = 'CursFundamentos';
   name: string = 'Manuel'
   age = 18;

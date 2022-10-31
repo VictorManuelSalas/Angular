@@ -1,3 +1,51 @@
+<h1>NgClass & NgStyle</h1>
+<input type="text" required #nameInput4="ngModel" [(ngModel)]="person.name">
+
+<hr class="line-error" [ngClass]="{
+    'valid': nameInput4.valid,
+    'invalid': nameInput4.invalid
+  }" />
+
+<div class="styles">
+  <div>
+    <input type="number" [(ngModel)]="box.width">
+    <input type="number" [(ngModel)]="box.height">
+    <input type="color" [(ngModel)]="box.background">
+  </div>
+  <div>
+    <div [ngStyle]="{
+      'width.px': box.width,
+      'height.px': box.height,
+      'background-color': box.background,
+      'display': 'block'
+    }">
+
+    </div>
+  </div>
+</div>
+<br>
+<hr>
+
+
+<h1>Class & Style</h1>
+<input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name">
+<p class="message-error" [class.invalid]="nameInput2.invalid">El campo es requerido</p>
+
+<label for="Nombre">Nombre</label>
+<input type="text" required #nameInput3="ngModel" [(ngModel)]="person.name">
+<p [style.font-style]="nameInput3.invalid ? 'italic' : 'normal'">Textooooooooooooooooooo</p>
+
+<div class="style">
+  <div>
+    <input type="text" [(ngModel)]="widthImg">
+  </div>
+  <div>
+    <img [src]="img" [style.width.px]="widthImg">
+  </div>
+</div>
+<br>
+<hr>
+
 <h1>[ngSwitch]</h1>
 
 <input type="text" required [(ngModel)]="person.name">
@@ -15,10 +63,10 @@
 
 
 <h1>*ngFor con objetos</h1>
-<div>
+<div class="products--grid">
   <div *ngFor="let product of products">
     <!--El src esta entre [] ya que es ul valor recibido del objeto-->
-    <img width="250" [src]="product.image" alt="Image">
+    <img [src]="product.image" alt="Image">
     <p>{{product.price}}</p>
     <p>{{product.name}}</p>
   </div>
