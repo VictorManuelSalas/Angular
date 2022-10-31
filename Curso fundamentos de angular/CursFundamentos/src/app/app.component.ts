@@ -115,4 +115,15 @@ export class AppComponent {
     }
   ]
 
+
+  //formulario
+  register = {
+    name: '',
+    email: '',
+    password: '',
+  }
+
+  onRegister(){
+    console.log(this.register)
+  }
 }

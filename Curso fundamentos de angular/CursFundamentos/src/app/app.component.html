@@ -1,3 +1,35 @@
+<h1>Creando un formulario</h1>
+<br>
+<!--Este form tiene el submit con una funcion
+y tiene un identificador que es myform el cual se pone con # y se 
+iguala a un atributo de angular el cual es ngForm.-->
+<form (ngSubmit)="onRegister()" #myForm="ngForm">
+  <div class="input group">
+    <label for="">Nombre</label>
+    <!--Los inputs deben de tener a fuerzas un name para identificar se-->
+    <input required type="text" name="name" [(ngModel)]="register.name">
+    <p>Mensajes de error</p>
+  </div>
+  <div class="input group">
+    <label for="">email</label>
+    <input required type="email" name="email" [(ngModel)]="register.email">
+    <p>Mensajes de error</p>
+  </div>
+  <div class="input group">
+    <label for="">Password</label>
+    <input required type="password" name="password" [(ngModel)]="register.password">
+    <p>Mensajes de error</p>
+  </div>
+  <!--El boton tiene que se desabilitara si los inputs no se llenen mediante el 
+  atributo de disabled el cual recibe el identificador del formulario
+y pasando le el invalid-->
+  <button [disabled]="myForm.invalid" type="submit">Registrar</button>
+</form>
+
+<br>
+<hr> 
+
+
 <h1>NgClass & NgStyle</h1>
 <input type="text" required #nameInput4="ngModel" [(ngModel)]="person.name">
 
